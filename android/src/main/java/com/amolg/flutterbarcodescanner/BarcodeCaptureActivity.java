@@ -418,6 +418,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
             FlutterBarcodeScannerPlugin.onBarcodeScanReceiver(barcode);
             finish();
         } else if (i == R.id.imgViewSwitchCamera) {
+            int currentFacing = mCameraSource.getCameraFacing();
             int inverseFacing = getInverseCameraFacing(currentFacing);
             if (hasCamera(inverseFacing)) {
                 boolean autoFocus = mCameraSource.getFocusMode() != null;
